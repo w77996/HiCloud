@@ -1,0 +1,38 @@
+# remote git
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://git.coding.net/xiaoantimes/xiaoantimes-taichi
+#          searchPaths: backend/repo
+#          username: 124746406@qq.com
+#          password:
+#      label: master
+
+# ---native
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+  profiles:
+     active: native
+  application:
+    name: hi-config-server
+  rabbitmq:
+    host: 120.78.170.123
+    username: guest
+    password: guest
+    port: 5672
+# port
+server:
+  port: 8769
+
+management:
+  security:
+    enabled: false
+
+
+

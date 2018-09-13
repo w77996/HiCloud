@@ -1,0 +1,11 @@
+
+spring:
+  application:
+    name: hi-zipkin-service
+  cloud:
+    config:
+      uri: http://localhost:8769
+      fail-fast: true
+  profiles:
+    active: pro
+

@@ -1,0 +1,12 @@
+server:
+  port: 9060
+security.basic.enabled: false
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: hi-user-service
+  clusterNameExpression: new String("default")
+
+management:
+  security:
+    enabled: false

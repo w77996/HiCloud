@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-admin-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-gateway-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-monitor-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-register" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-user-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hi-zipkin-service" charset="UTF-8" />
+  </component>
+</project>
