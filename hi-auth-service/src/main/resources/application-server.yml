@@ -1,0 +1,107 @@
+server:
+  port: 8888
+  compression:
+    mime-types: application/json
+spring:
+    boot:
+        admin:
+          client:
+            management-url: http://119.23.75.136:8600
+          url: http://193.112.113.42:64000/svc-monitor # 向服务端注册的地址
+    data:
+        elasticsearch:
+            cluster-name: elasticsearch
+            cluster-nodes: 127.0.0.1:9301
+            properties:
+                path:
+                  logs: ./elasticsearch/log #elasticsearch日志存储目录
+                  data: ./elasticsearch/data #elasticsearch数据存储目录
+    redis:
+        database: 0
+        host: 127.0.0.1
+        password:
+        pool:
+            max-active: 8
+            max-wait: 5000
+            max-idle: 8
+            min-idle: 0
+        timeout: 10000
+        port: 6379
+    datasource:
+        name: graduate
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://rm-wz9uc334sczu55fp8do.mysql.rds.aliyuncs.com:3306/zhengshi__jinniu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&userSSL=true
+        username: xiehao
+        password: xiehao2018!@#
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,log4j
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+        jackson:
+            date-format: yyyy-MM-dd HH:mm:ss
+            time-zone: GMT+08
+#    activemq:
+#        broker-url: tcp://193.112.113.42:61616
+#        user: admin
+#        password: admin
+#        in-memory: true
+#        pool:
+#          enabled: false
+#        packages:
+#          trust-all: true
+#    jms:
+#    #    true 为topic模式 false 为queue模式
+#        pub-sub-domain: true
+    thymeleaf:
+      cache: false
+      mode: HTML5
+logging:
+  level:
+    root: info
+  file: log.log
+info: #定义各种额外的详情给服务端显示
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+####基本的一些配置信息
+#####自定义的属性和值
+myprops:
+    version: v1
+    h5_news_domain: http://v1.jinniu.cn/app/news/
+    qiniu_image_server: http://image.jinniu.cn/
+    redis_token_prefiex: app_token_
+    redis_carousels: app_carousels
+### 微信配置
+weixin:
+    appid: wxfc4ec0293e862fb0
+    appsecret: f4797e860b280246c05445edf650f0dc
+    webid: wxa6222a90afb087d9
+    # 网站的秘钥
+    websecret: 5a949d9a451f64109f8a4229a39fe70f
+    get_wx_token_url: https://api.weixin.qq.com/sns/oauth2/access_token
+    get_wx_userinfo: https://api.weixin.qq.com/sns/userinfo
+qiniu:
+    accessKey: 0sRYLjM2BxkUkq6jgiogUokgU0J5_46wKtQ-G9pk
+    secretKey: Ll4v0QcmXWpPBgYxMasZJaiWvMLUVbWRatguaHAV
+    bucket: image
+sms:
+    key: 155e54290b885b35dae42be03d94fd59
+
+
+
+

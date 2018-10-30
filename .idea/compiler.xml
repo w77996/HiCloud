@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hi-admin-service" />
+        <module name="hi-auth-service" />
         <module name="hi-common" />
         <module name="hi-config-server" />
         <module name="hi-gateway-service" />

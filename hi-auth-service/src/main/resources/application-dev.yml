@@ -1,0 +1,80 @@
+server:
+  port: 8089
+  compression:
+    mime-types: application/json
+spring:
+    redis:
+        database: 0
+        host: 120.78.170.123
+        password:
+        pool:
+            max-active: 8
+            max-wait: 5000
+            max-idle: 8
+            min-idle: 0
+        timeout: 10000
+        port: 6379
+    datasource:
+        name: graduate
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://rm-wz9uc334sczu55fp8do.mysql.rds.aliyuncs.com:3306/ceshi__jinniu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&userSSL=true
+        username: xiehao
+        password: xiehao2018!@#
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,log4j
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+        jackson:
+            date-format: yyyy-MM-dd HH:mm:ss
+            time-zone: GMT+08
+    rabbitmq:
+        host: 120.78.170.123
+        username: guest
+        password: guest
+        port: 5672
+logging:
+  level:
+    root: info
+    com:
+      jinniu:
+        hades:
+          mapper: debug
+  file: log.log
+info: #定义各种额外的详情给服务端显示
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+####基本的一些配置信息
+#####自定义的属性和值
+myprops:
+    version: v1
+    h5_news_domain: http://v1-dev.jinniu.cn/app/news/
+    qiniu_image_server: http://image-dev.jinniu.cn/
+    redis_token_prefiex: app_token_
+    redis_carousels: app_carousels
+qiniu:
+    accessKey: 0sRYLjM2BxkUkq6jgiogUokgU0J5_46wKtQ-G9pk
+    secretKey: Ll4v0QcmXWpPBgYxMasZJaiWvMLUVbWRatguaHAV
+    bucket: image-dev
+sms:
+    key: 155e54290b885b35dae42be03d94fd59
+
+
+
+
+

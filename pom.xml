@@ -17,6 +17,7 @@
         <module>hi-zipkin-service</module>
         <module>hi-admin-service</module>
         <module>hi-monitor-service</module>
+        <module>hi-auth-service</module>
     </modules>
 
     <properties>
